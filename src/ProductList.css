@@ -1,0 +1,69 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 2rem;
+  background: var(--forest);
+  color: var(--white);
+}
+.navbar a { color: var(--white); text-decoration: none; }
+.brand { font-family: Georgia, serif; font-size: 1.5rem; font-weight: 700; }
+.nav-links { display: flex; align-items: center; gap: 2rem; font-size: 1.1rem; }
+.nav-links a:hover { color: var(--sun); }
+.nav-links a:focus-visible, .brand:focus-visible { outline: 2px solid var(--sun); outline-offset: 4px; }
+
+.cart-link { position: relative; display: inline-flex; }
+.cart_quantity_count {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-35%);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--sun);
+  pointer-events: none;
+}
+
+.product-grid-page { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+.category-title {
+  font-family: Georgia, serif;
+  font-size: 1.9rem;
+  color: var(--forest);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--sun);
+  display: inline-block;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.product-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(18, 35, 27, 0.12);
+}
+.product-image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; }
+.product-title { margin: 0.8rem 0 0.25rem; font-size: 1.15rem; }
+.product-description { margin: 0 0 0.6rem; font-size: 0.9rem; color: #43574b; flex: 1; }
+.product-price { margin: 0 0 0.8rem; font-weight: 800; font-size: 1.2rem; color: var(--fern); }
+.product-button {
+  background: var(--fern);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.product-button:hover:not(:disabled) { background: var(--forest); }
+.product-button:disabled { background: #a7b8ad; cursor: not-allowed; }
+.product-button:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }

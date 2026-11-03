@@ -1,0 +1,89 @@
+:root {
+  --forest: #16372a;
+  --fern: #2f6b4c;
+  --mint: #e6f2ea;
+  --sun: #f2c14e;
+  --ink: #12231b;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--mint);
+}
+
+/* ---------- Landing page (background image) ---------- */
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--white);
+}
+
+.background-image {
+  background-image: url('/hero.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.landing-page.fade-out { display: none; }
+
+.landing-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.landing-copy h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin: 0 0 0.75rem;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  margin: 0 0 2rem;
+  opacity: 0.9;
+}
+
+.get-started-button {
+  background: var(--sun);
+  color: var(--forest);
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.get-started-button:hover { background: #ffd36b; transform: translateY(-2px); }
+.get-started-button:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
+
+.about-us-container {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  line-height: 1.6;
+}
+.about-us-container h2 { margin-top: 0; font-family: Georgia, serif; }
+
+.product-list-container { display: none; }
+.product-list-container.visible { display: block; }
+
+@media (max-width: 800px) {
+  .landing-content { grid-template-columns: 1fr; gap: 2rem; }
+}
